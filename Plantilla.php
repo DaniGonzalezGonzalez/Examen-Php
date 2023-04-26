@@ -10,7 +10,7 @@ abstract class Plantilla {
     // He añadido una expresión regular para asegurar que al incluir el año de ingreso sea de 4 dígitos obligatoriamente
     
     $expRegAnho = '/^\d{4}$/';
-    if(preg_match($expRegAnho, $anhoIngreso)) {
+    if(preg_match($expRegAnho, (string) $anhoIngreso)) {
       $this->anhoIngreso = $anhoIngreso;
     } else {
       throw new Exception("El año de ingreso debe ser un número de 4 dígitos");
